@@ -88,7 +88,8 @@ document.getElementById("moveImageRight").addEventListener("click", function()
 });
 
 // Image Size Changed
-document.getElementById("imageSize").addEventListener('change', function (evt) {
+document.getElementById("imageSize").addEventListener('change', function (evt) 
+{
 
     var images = document.querySelectorAll(".overlayImage");
     for (i = 0; i < images.length; i++)
@@ -98,19 +99,27 @@ document.getElementById("imageSize").addEventListener('change', function (evt) {
 });
 
 // Save Images Button Press
-document.getElementById("saveImages").addEventListener("click", function() {
+document.getElementById("saveImages").addEventListener("click", function() 
+{
     var div = document.getElementById('products');
     var divs = div.getElementsByTagName('div');
-    console.log(divs)
-    for (i = 0; i < divs.length; i++)
+
+    $(divs).each(function (i)
     {
         var baseImage = divs[i].id.replace("Product", "")
-        domtoimage.toBlob(document.getElementById(divs[i].id)).then(function (blob) {
-                window.saveAs(blob, `${workingImage}-${product}-${baseImage}.png`);
-        });        
-    };
+        saveImage(divs[i], baseImage)
+                
+    });
 });
 
+// Save DOM as PNG
+function saveImage(idToSave, baseImage)
+{
+    domtoimage.toBlob(idToSave).then(function (blob) 
+    {
+        window.saveAs(blob, `${workingImage}-${product}-${baseImage}.png`);
+    });
+}
 /* 
     Functions
 */

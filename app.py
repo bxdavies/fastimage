@@ -107,7 +107,7 @@ def generate():
     
     if frmFiles().is_submitted():
         session['product'] = frmFiles().fieProduct.data
-        session['workingImage'] = frmFiles().fieProduct.data
+        session['workingImage'] = frmFiles().fieFile.data
         return redirect(url_for('generator'))
 
     return render_template('generate.html', title='Generate Mockups', frmFiles=frmFiles())
