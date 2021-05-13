@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=B612&display=swap');
+html, body 
+{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+body
+{
+    display: flex; 
+    flex-direction: column;
+    margin: 0;
+    font-family: 'B612', sans-serif;
+}
+
+/* Navigation and Header */
+header
+{
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: #ff7b25;
+}
+
+nav 
+{
+    overflow: hidden;
+}
+
+nav a 
+{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown 
+{
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn 
+{
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+  
+nav a:hover, .dropdown:hover .dropbtn, .dropbtn:focus 
+{
+    background-color: #6b5b95;
+}
+  
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a 
+{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  
+.dropdown-content a:hover 
+{
+    background-color: #ddd;
+}
+  
+.show 
+{
+    display: block;
+}
+
+/* Content */
+main{
+    flex: 1 0 auto; 
+    padding: 20px;
+    margin: 5px;
+}
+
+
+/* Footer */
+footer
+{
+    flex-shrink: 0; 
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #ff7b25;
+}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {{ frmUploadProduct.csrf_token }} <br>
+    {{ frmUploadProduct.fieProduct.label }} {{ frmUploadProduct.fieProduct }} <br>
+    {{ frmUploadProduct.fieType.label }} {{ frmUploadProduct.fieType }} <br>
+    {{ frmUploadProduct.fieFileName.label }} {{ frmUploadProduct.fieFileName }} <br>
+    {{ frmUploadProduct.fieFile.label }} {{ frmUploadProduct.fieFile }} <br>
+    <input type="submit" value="Go">
+</form>
+<script>
+    document.getElementById('productName').addEventListener('change', function() {
+        var send = {
+            product: this.value
+        };
+        $.getJSON('/api/product/types', send, function(result)
+        {
+            productTypeSelect = document.getElementById('productType')
+            for (i in result)
+            {
+                mySelect = document.createElement('option');
+                mySelect.setAttribute('value', result[i]);
+                mySelect.innerHTML = result[i];
+                productTypeSelect.appendChild(mySelect);
+            }
+        });
+
+    });
+</script>
+{% endblock %}

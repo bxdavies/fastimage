@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {{ frmUploadArt.fieFileName.label }} {{ frmUploadArt.fieFileName }} <br>
+    {{ frmUploadArt.fieFile.label }} {{ frmUploadArt.fieFile }} <br>
+    <input type="submit" value="Upload">
+</form>
+{% endblock %}

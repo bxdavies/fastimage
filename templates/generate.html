@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST">
+    {{ frmFiles.csrf_token }} <br>
+    {{ frmFiles.fieProduct.label }} {{ frmFiles.fieProduct }} <br>
+    {{ frmFiles.fieFile.label }} {{ frmFiles.fieFile }} <br>
+    <input type="submit" value="Go">
+</form>
+{% endblock %}

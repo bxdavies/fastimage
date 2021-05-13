@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static', filename='css/generator.css') }}" >
+<div class="container-half">
+    <div>
+        <h4> Type </h4>
+        <form id="productType" onsubmit="return false">      
+            <button id="productTypeSubmitButton"> Show Colours! </button>
+        </form>
+        <h4> Image Adjustments </h4>
+        <button id="moveImageUp">UP</button>
+        <button id="moveImageDown">DOWN</button>
+        <button id="moveImageLeft">LEFT</button>
+        <button id="moveImageRight">RIGHT</button>
+        <br>
+        <label for="imageSize">Size (%):</label>
+        <input type="number" id="imageSize" name="imageSize" min="1" max="100" value="50">
+        <br>
+        <button id="saveImages"> Save All </button>
+    </div>
+    <div>
+        <h4> Colours / Size </h4>
+        <form id="productColours">      
+        
+        </form>
+    </div>
+</div>
+<h3> Products </h3>
+<div id="products" class="container-half">
+    
+</div>
+<script>
+    var product = '{{ product }}';
+    var workingImage = '{{ workingImage }}';
+</script>
+<script type=text/javascript src="{{ url_for('static', filename='js/dom-to-image.js') }}"></script>
+<script type=text/javascript src="{{ url_for('static', filename='js/FileSaver.js') }}"></script>
+<script type=text/javascript src="{{ url_for('static', filename='js/generator.js') }}"></script>
+{% endblock %}
